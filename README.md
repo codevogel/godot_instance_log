@@ -40,7 +40,9 @@ Instance Log lets you:
 
 ## Installation
 
-1. Copy the `addons/instance_log` folder into your Godot project.
+1. Copy the `addons/instance_log` folder into your Godot project. (Download this
+   repository as a .zip or download from
+   [releases](https://github.com/codevogel/godot_instance_log/releases/latest)
 2. In Godot, open **Project > Project Settings > Plugins**.
 3. Enable **Instance Log**.
 
