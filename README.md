@@ -24,6 +24,8 @@ Instance Log lets you:
 - Sort messages in chronological order
 - Switch between combined view and split-by-role view
 
+![before after](.github-assets/img/before-after.png)
+
 ## Features
 
 - Editor bottom panel named **Instance Log**
