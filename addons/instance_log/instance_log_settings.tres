@@ -1,0 +1,6 @@
+[gd_resource type="Resource" script_class="InstanceLogSettings" format=3 uid="uid://0ftqdumxcxwl"]
+
+[ext_resource type="Script" uid="uid://dgpa6ntqyhsxb" path="res://addons/instance_log/instance_log_settings.gd" id="1"]
+
+[resource]
+script = ExtResource("1")

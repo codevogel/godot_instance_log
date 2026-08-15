@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://yg1nvtfxtak4"]
+
+[ext_resource type="Script" uid="uid://c3yfqcpou7ark" path="res://addons/instance_log/dock/instance_log_dock.gd" id="1"]
+
+[node name="InstanceLogDock" type="Control" unique_id=913598888]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1")
+
+[node name="VBox" type="VBoxContainer" parent="." unique_id=1998034858]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Toolbar" type="HBoxContainer" parent="VBox" unique_id=674653799]
+layout_mode = 2
+alignment = 2
+
+[node name="AutoscrollCheck" type="CheckBox" parent="VBox/Toolbar" unique_id=835756359]
+unique_name_in_owner = true
+layout_mode = 2
+button_pressed = true
+text = "Autoscroll"
+
+[node name="ClearOnPlayCheck" type="CheckBox" parent="VBox/Toolbar" unique_id=1183714487]
+unique_name_in_owner = true
+layout_mode = 2
+button_pressed = true
+text = "Clear On Play"
+
+[node name="SplitViewCheck" type="CheckBox" parent="VBox/Toolbar" unique_id=1343417648]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Split View"
+
+[node name="ClearButton" type="Button" parent="VBox/Toolbar" unique_id=1006404930]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Clear"
+
+[node name="LogLabel" type="RichTextLabel" parent="VBox" unique_id=1795935785]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+focus_mode = 2
+bbcode_enabled = true
+context_menu_enabled = true
+selection_enabled = true
+
+[node name="SplitContainer" type="HBoxContainer" parent="VBox" unique_id=1101859835]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_vertical = 3

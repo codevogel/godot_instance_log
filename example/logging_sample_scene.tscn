@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://uoo50mpb76s8"]
+
+[ext_resource type="Script" uid="uid://dgif7cakaivhs" path="res://example/networking.gd" id="1_c0r0v"]
+[ext_resource type="Script" uid="uid://cr3m0tcantxxi" path="res://example/host_ui.gd" id="1_oiohw"]
+[ext_resource type="Script" uid="uid://cvrxitwydhnje" path="res://example/lobby_ui.gd" id="1_uymgy"]
+[ext_resource type="Script" uid="uid://b72v307u44chd" path="res://example/client_ui.gd" id="2_gj17u"]
+
+[node name="LoggingSampleScene" type="Control" unique_id=1327175016]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LobbyUI" type="VBoxContainer" parent="." unique_id=743834757 node_paths=PackedStringArray("client_ui", "host_ui", "networking")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+script = ExtResource("1_uymgy")
+client_ui = NodePath("../ClientUI")
+host_ui = NodePath("../HostUI")
+networking = NodePath("../Networking")
+
+[node name="HostButton" type="Button" parent="LobbyUI" unique_id=1857453655]
+layout_mode = 2
+text = "Host"
+
+[node name="JoinButton" type="Button" parent="LobbyUI" unique_id=462470092]
+layout_mode = 2
+text = "Join"
+
+[node name="ClientUI" type="VBoxContainer" parent="." unique_id=1616012360 node_paths=PackedStringArray("networking")]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+script = ExtResource("2_gj17u")
+networking = NodePath("../Networking")
+
+[node name="ConnectionStatusLabel" type="Label" parent="ClientUI" unique_id=1834703372]
+layout_mode = 2
+text = "Connection status:"
+horizontal_alignment = 1
+
+[node name="SendToHostButton" type="Button" parent="ClientUI" unique_id=829364429]
+layout_mode = 2
+text = "Send Message To Host"
+
+[node name="HostUI" type="VBoxContainer" parent="." unique_id=1388440538 node_paths=PackedStringArray("networking")]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+script = ExtResource("1_oiohw")
+networking = NodePath("../Networking")
+
+[node name="PeersConnectedLabel" type="Label" parent="HostUI" unique_id=909135340]
+layout_mode = 2
+text = "Peers connected:"
+horizontal_alignment = 1
+
+[node name="SendToClientButton" type="Button" parent="HostUI" unique_id=984796886]
+layout_mode = 2
+text = "Send Message To Client"
+
+[node name="Networking" type="Node" parent="." unique_id=1766747473 node_paths=PackedStringArray("client_ui", "host_ui")]
+script = ExtResource("1_c0r0v")
+client_ui = NodePath("../ClientUI")
+host_ui = NodePath("../HostUI")
