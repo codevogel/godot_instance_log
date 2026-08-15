@@ -4,3 +4,4 @@
 
 [resource]
 script = ExtResource("1")
+_grab_role_argument_from_cmdline_args = false

@@ -26,13 +26,35 @@ client_ui = NodePath("../ClientUI")
 host_ui = NodePath("../HostUI")
 networking = NodePath("../Networking")
 
-[node name="HostButton" type="Button" parent="LobbyUI" unique_id=1857453655]
+[node name="VBoxContainer" type="VBoxContainer" parent="LobbyUI" unique_id=168195647]
 layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 20
+
+[node name="HostButton" type="Button" parent="LobbyUI/VBoxContainer" unique_id=1857453655]
+layout_mode = 2
+size_flags_horizontal = 0
 text = "Host"
 
-[node name="JoinButton" type="Button" parent="LobbyUI" unique_id=462470092]
+[node name="HBoxContainer" type="HBoxContainer" parent="LobbyUI/VBoxContainer" unique_id=448899271]
 layout_mode = 2
-text = "Join"
+theme_override_constants/separation = 15
+
+[node name="JoinButton" type="Button" parent="LobbyUI/VBoxContainer/HBoxContainer" unique_id=462470092]
+layout_mode = 2
+text = "Join
+"
+
+[node name="ClientIDOptionButton" type="OptionButton" parent="LobbyUI/VBoxContainer/HBoxContainer" unique_id=221662294]
+layout_mode = 2
+selected = 0
+item_count = 3
+popup/item_0/text = "client_0"
+popup/item_0/id = 0
+popup/item_1/text = "client_1"
+popup/item_1/id = 1
+popup/item_2/text = "client_2"
+popup/item_2/id = 2
 
 [node name="ClientUI" type="VBoxContainer" parent="." unique_id=1616012360 node_paths=PackedStringArray("networking")]
 visible = false
