@@ -14,6 +14,7 @@ var _settings: InstanceLogSettings
 @onready var _autoscroll_check: CheckBox = %AutoscrollCheck
 @onready var _clear_on_play_check: CheckBox = %ClearOnPlayCheck
 @onready var _split_view_check: CheckBox = %SplitViewCheck
+@onready var _show_unix_time_stamp_check: CheckBox = %ShowUnixTimeStampCheck
 @onready var _split_container: HBoxContainer = %SplitContainer
 
 
@@ -25,6 +26,7 @@ func setup(settings: InstanceLogSettings) -> void:
 func _ready() -> void:
 	_clear_button.pressed.connect(_on_clear_pressed)
 	_split_view_check.toggled.connect(_on_split_view_toggled)
+	_show_unix_time_stamp_check.toggled.connect(_on_show_unix_time_stamp_toggled)
 	_sync_view_visibility()
 
 
@@ -76,7 +78,7 @@ func _redraw_messages() -> void:
 
 
 func _redraw_single_messages() -> void:
-	var show_unix_time_stamp: bool = _settings.should_show_unix_time_stamp()
+	var show_unix_time_stamp: bool = _show_unix_time_stamp_check.button_pressed
 
 	_log_label.clear()
 	for message: InstanceLogMessage in _message_collection.get_messages():
@@ -98,7 +100,7 @@ func _redraw_single_messages() -> void:
 
 
 func _redraw_split_messages() -> void:
-	var show_unix_time_stamp: bool = _settings.should_show_unix_time_stamp()
+	var show_unix_time_stamp: bool = _show_unix_time_stamp_check.button_pressed
 	var messages_by_role: Dictionary[String, InstanceLogMessageCollection] = {}
 
 	for message: InstanceLogMessage in _message_collection.get_messages():
@@ -150,6 +152,10 @@ func _sync_view_visibility() -> void:
 
 func _on_split_view_toggled(_enabled: bool) -> void:
 	_sync_view_visibility()
+	_redraw_messages()
+
+
+func _on_show_unix_time_stamp_toggled(_enabled: bool) -> void:
 	_redraw_messages()
 
 

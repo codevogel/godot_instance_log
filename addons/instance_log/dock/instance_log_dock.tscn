@@ -29,6 +29,12 @@ layout_mode = 2
 button_pressed = true
 text = "Autoscroll"
 
+[node name="ShowUnixTimeStampCheck" type="CheckBox" parent="VBox/Toolbar" unique_id=1611088216]
+unique_name_in_owner = true
+layout_mode = 2
+button_pressed = true
+text = "Show Unix Timestamp"
+
 [node name="ClearOnPlayCheck" type="CheckBox" parent="VBox/Toolbar" unique_id=1183714487]
 unique_name_in_owner = true
 layout_mode = 2

@@ -28,9 +28,6 @@ extends Resource
 
 @export var _unknown_role_color: Color = Color.RED
 
-## Whether to display the unix timestamp of each log message.
-@export var _show_unix_time_stamp: bool = true
-
 ## The maximum number of log messages to show in the dock. [br]
 ## You can increment this if you want to keep more messages in the log,
 ## but this may impact performance, as the log will be sorted each time a new message is added.
@@ -48,10 +45,6 @@ func get_cmdline_role_argument_prefix() -> String:
 
 func get_role_colors() -> Dictionary[String, Color]:
 	return _role_colors
-
-
-func should_show_unix_time_stamp() -> bool:
-	return _show_unix_time_stamp
 
 
 func get_max_message_count() -> int:
