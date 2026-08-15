@@ -39,7 +39,7 @@ func get_role_colors() -> Dictionary[String, Color]:
 	return _role_colors
 
 
-func get_show_unix_time_stamp() -> bool:
+func should_show_unix_time_stamp() -> bool:
 	return _show_unix_time_stamp
 
 

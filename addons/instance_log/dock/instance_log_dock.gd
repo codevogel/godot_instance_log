@@ -76,7 +76,7 @@ func _redraw_messages() -> void:
 
 
 func _redraw_single_messages() -> void:
-	var show_unix_time_stamp: bool = _settings.get_show_unix_time_stamp()
+	var show_unix_time_stamp: bool = _settings.should_show_unix_time_stamp()
 
 	_log_label.clear()
 	for message: InstanceLogMessage in _message_collection.get_messages():
@@ -98,7 +98,7 @@ func _redraw_single_messages() -> void:
 
 
 func _redraw_split_messages() -> void:
-	var show_unix_time_stamp: bool = _settings.get_show_unix_time_stamp()
+	var show_unix_time_stamp: bool = _settings.should_show_unix_time_stamp()
 	var messages_by_role: Dictionary[String, InstanceLogMessageCollection] = {}
 
 	for message: InstanceLogMessage in _message_collection.get_messages():
