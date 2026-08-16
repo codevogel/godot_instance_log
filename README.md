@@ -44,7 +44,7 @@ Instance Log lets you:
 
 1. Copy the `addons/instance_log` folder into your Godot project. (Download this
    repository as a .zip or download from
-   [releases](https://github.com/codevogel/godot_instance_log/releases/latest)
+   [releases](https://github.com/codevogel/godot_instance_log/releases/latest), the [Asset Library](https://godotengine.org/asset-library/asset/5414), or the [Asset Store](https://store.godotengine.org/asset/codevogel/instance-log/)
 2. In Godot, open **Project > Project Settings > Plugins**.
 3. Enable **Instance Log**.
 
